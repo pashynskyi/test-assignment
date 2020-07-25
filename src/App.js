@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './Header';
-
 import './sass/app.scss';
+import HomeContainer from './components/Home/HomeContainer';
 
 function App() {
   return (
     <div className="app-wrapper">
       <Header />
       <main className='app-content'>
-        <h1>main block</h1>
+       <HomeContainer />
       </main>
       {/* <Footer /> */}
     </div>

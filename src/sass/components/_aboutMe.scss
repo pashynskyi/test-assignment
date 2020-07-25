@@ -1,0 +1,9 @@
+@import "../variables";
+
+.about-me-container {
+  h1 {
+    font-size: $titleFontSize1;
+    color: $titleColor;
+    text-align: center;
+  }
+}
