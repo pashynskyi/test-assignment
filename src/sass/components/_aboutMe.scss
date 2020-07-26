@@ -1,6 +1,7 @@
 @import "../variables";
 
 .about-me-container {
+  margin-bottom: 156px;
   h1 {
     font-size: $titleFontSize1;
     color: $titleColor;
@@ -17,7 +18,7 @@
     & div {
       margin-left: 50px;
       h2 {
-        font-size: 24px;
+        font-size: $titleFontSize2;
         line-height: 29px;
         color: $titleColor;
         margin-bottom: 24px;
