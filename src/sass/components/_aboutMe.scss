@@ -5,5 +5,38 @@
     font-size: $titleFontSize1;
     color: $titleColor;
     text-align: center;
+    margin-bottom: 68px;
+    letter-spacing: -1px;
+  }
+  & > div {
+    display: flex;
+    img {
+      height: 285px;
+      margin-left: 25px;
+    }
+    & div {
+      margin-left: 50px;
+      h2 {
+        font-size: 24px;
+        line-height: 29px;
+        color: $titleColor;
+        margin-bottom: 24px;
+      }
+      p {
+        font-size: 16px;
+        margin: 0px 0px 24px 0px;
+        line-height: 24px;
+      }
+      span {
+        color: $primaryColor;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.75;
+        cursor: pointer;
+        &:hover {
+          color: #d24335;
+        }
+      }
+    }
   }
 }

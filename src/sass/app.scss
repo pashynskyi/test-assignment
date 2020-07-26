@@ -17,8 +17,9 @@ html {
       margin: 0 auto;
       & .app-content {
         max-width: $contentMaxWidth;
+        margin: 0px auto;
+        padding: 0px 30px;
         background: wheat;
-        margin: auto;
       }
     }
   }

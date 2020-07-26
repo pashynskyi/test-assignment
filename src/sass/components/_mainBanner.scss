@@ -4,16 +4,16 @@
   background-image: url("../../assets/images/banner-photo.jpg");
   background-size: cover;
   height: 600px;
-  width: $contentMaxWidth;
   color: $bannerColor;
   padding-left: 30px;
   padding-top: 108px;
-  margin-bottom: 160px;
+  margin: 0px -30px 155px -30px;
   h1 {
     font-size: $titleFontSize1;
     line-height: 54px;
-    width: 535px;
+    width: 525px;
     margin-bottom: 25px;
+    letter-spacing: -1px;
   }
   p {
     font-size: $paragraphSize;
