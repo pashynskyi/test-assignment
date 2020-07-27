@@ -6,7 +6,7 @@ const UserBtn = ({ requestNextUsers, nextUrl }) => {
   }
 
   return (
-    <button className="button" onClick={onRequest}>Show more</button>
+    <button className="button user-btn" onClick={onRequest}>Show more</button>
   )
 }
 

@@ -8,9 +8,15 @@ const Users = ({ users }) => {
       <div className="user-card">
         <img src={user.photo !== null ? user.photo : photoCover} alt='userIcon' />
         <div className="user-info">
-          <h2>{user.name}</h2>
+          <div className="popup-box">
+            <h2>{user.name}</h2>
+            <span data-descr={user.name}></span>
+          </div>
           <p>{user.position}</p>
-          <p>{user.email}</p>
+          <div className="popup-box">
+            <p>{user.email}</p>
+            <span data-descr={user.email}></span>
+          </div>
           <p>{user.phone}</p>
         </div>
       </div>

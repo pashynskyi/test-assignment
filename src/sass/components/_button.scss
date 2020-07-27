@@ -1,4 +1,4 @@
-@import '../variables';
+@import "../variables";
 
 .button {
   width: 210px;
@@ -10,4 +10,8 @@
   &:hover {
     background-color: #d24335;
   }
+}
+
+.user-btn {
+  margin-bottom: 160px;
 }
