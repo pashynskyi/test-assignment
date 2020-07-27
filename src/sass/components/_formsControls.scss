@@ -1,0 +1,18 @@
+.formControl {
+  display: inline-block;
+}
+.formControl.error {
+  position: relative;
+  display: inline-block;
+}
+.formControl.error input {
+  border: solid 1px #db3445;
+  box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
+}
+
+.formControl.error span {
+  color: red;
+  position: absolute;
+  top: 42px;
+  left: 5px;
+}

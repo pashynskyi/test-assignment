@@ -1,0 +1,67 @@
+@import "../variables";
+
+.register-container {
+  padding-top: 116px;
+  & > div {
+    text-align: center;
+    h1 {
+      font-size: $titleFontSize1;
+      color: $titleColor;
+      margin-bottom: 23px;
+    }
+    p {
+      font-size: 16px;
+      margin: auto;
+      margin-bottom: 40px;
+      max-width: 470px;
+      line-height: 1.38;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .field-box {
+        display: inline-block;
+        text-align: left;
+        margin: 0px 60px;
+        h3 {
+          font-size: 16px;
+          color: $titleColor;
+          margin-bottom: 10px;
+        }
+        .field {
+          width: 467px;
+          padding: 7px;
+          margin-bottom: 20px;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+          background-color: #ffffff;
+          color: #404040;
+          font-size: 16px;
+          &:focus {
+            border: 1px solid #80bdff;
+            box-shadow: 0px 0px 0px 3px rgba(128, 189, 255, 0.2);
+          }
+        }
+        p {
+          font-size: 12px;
+          color: #212529;
+        }
+        &.radio-box {
+          display: block;
+          width: 467px;
+          .position-box {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: $titleColor;
+            label {
+              margin: 10px 0px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
