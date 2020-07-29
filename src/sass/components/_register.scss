@@ -2,6 +2,9 @@
 
 .register-container {
   padding-top: 116px;
+  & ::placeholder {
+    color: #b2b9c0;
+  }
   & > div {
     text-align: center;
     h1 {
@@ -59,9 +62,59 @@
               margin: 10px 0px;
               cursor: pointer;
             }
+            & input {
+              margin-right: 10px;
+              &::after {
+                content: "";
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                border: 1px solid #adb5bd;
+                border-radius: 50%;
+                background: white;
+                font-size: 16px;
+                position: absolute;
+                top: 0;
+                left: -3px;
+                cursor: pointer;
+              }
+              /* стили для радиокнопки, находящейся в состоянии checked */
+              &:checked::after {
+                border: 5px solid #0b76ef;
+              }
+            }
+          }
+        }
+        & input[type="file"] {
+          display: none;
+        }
+        & .field.field-file {
+          color: #b2b9c0;
+          position: relative;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          /* стили для file upload button */
+          & label.file-label {
+            color: $titleColor;
+            font-size: 16px;
+            border-left: 1px solid #ced4da;
+            background: #f8f7f5;
+            border-radius: 0px 4px 4px 0px;
+            width: 83px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
           }
         }
       }
+    }
+    & .button {
+      margin-top: 40px;
     }
   }
 }

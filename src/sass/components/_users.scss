@@ -64,7 +64,7 @@
             span[data-descr]::after {
               content: attr(data-descr);
               position: absolute;
-              left: 20px;
+              left: 0px;
               top: 35px;
               padding: 10px;
               min-width: 200px;

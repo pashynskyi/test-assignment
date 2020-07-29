@@ -3,10 +3,19 @@ import React from 'react';
 export const Input = ({ input, meta, ...props }) => {
 
   const hasError = meta.touched && meta.error;
+  
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      debugger;
+     console.log(e.target.files[0]);
+    }
+  }
+
+
   return (
     <div className={`${'formControl'} ${hasError ? 'error' : ""}`}>
       <div>
-        <input {...input} {...props} />
+        <input onChange={onMainPhotoSelected} {...input} {...props} />
       </div>
       {hasError && <span>{meta.error}</span>}
     </div>

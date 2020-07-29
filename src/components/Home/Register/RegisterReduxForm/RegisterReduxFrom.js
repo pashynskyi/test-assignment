@@ -6,7 +6,7 @@ import Button from '../../../common/Button/Button';
 
 const maxLength255 = maxLengthCreator(255);
 
-export const RegisterForm = ({ handleSubmit, positions }) => {
+export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoName }) => {
 
   const positionsElements = positions.map((position) => (
     <label key={position.id}>
@@ -15,10 +15,16 @@ export const RegisterForm = ({ handleSubmit, positions }) => {
         component={Input}
         type="radio"
         validate={[required]}
-        value={`${position.id}`} />{' '}
+        value={`${position.id}`} />
       {position.name}
     </label>
   ));
+
+  const onSelectedPhoto = (e) => {
+    if (e.target.files.length) {
+      addSelectedPhoto(e.target.files[0]);
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -57,6 +63,22 @@ export const RegisterForm = ({ handleSubmit, positions }) => {
         <h3>Select your position</h3>
         <div className="position-box">
           {positionsElements}
+        </div>
+      </div>
+      <div className="field-box">
+        <h3>Photo</h3>
+        <input
+          // className="field"
+          id="file"
+          type="file"
+          accept=".jpg, .jpeg"
+          onChange={onSelectedPhoto}
+        />
+        <div className="field field-file">
+          {!photoName ? 'Upload your photo' : photoName}
+          <label className='file-label' for="file">
+            Browse
+        </label>
         </div>
       </div>
       <div>

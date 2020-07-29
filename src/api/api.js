@@ -4,6 +4,10 @@ const instance = axios.create({
   baseURL: 'https://frontend-test-assignment-api.abz.agency/api/v1/'
 })
 
+// const principal = (token) => {
+//   return { headers: { "Token": `${token}` } }
+// }
+
 export const usersAPI = {
   getUsers() {
     return instance.get(`users?page=1&count=6`)
@@ -21,8 +25,31 @@ export const usersAPI = {
 }
 
 export const registerAPI = {
+  getToken() {
+    return instance.get('token')
+      .then(response => {
+        return response.data
+      })
+  },
   getPositions() {
     return instance.get('positions')
+      .then(response => {
+        return response.data
+      })
+  },
+  postUser(registerData, selectedPhoto, token) {
+    let formData = new FormData();
+    formData.append('name', registerData.name);
+    formData.append('email', registerData.email);
+    formData.append('phone', registerData.phone);
+    formData.append('position_id', registerData.id);
+    formData.append('photo', selectedPhoto);
+    return instance.post('users', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Token': token
+      }
+    })
       .then(response => {
         return response.data
       })

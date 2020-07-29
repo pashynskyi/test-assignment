@@ -1,7 +1,7 @@
 import React from 'react';
 import { RegisterReduxForm } from './RegisterReduxForm/RegisterReduxFrom';
 
-const Register = ({ onSubmit, positions }) => {
+const Register = ({ onSubmit, positions, addSelectedPhoto, photoName }) => {
   return (
     <article className="register-container">
       <div>
@@ -10,7 +10,12 @@ const Register = ({ onSubmit, positions }) => {
           Attention! After successful registration and alert,
           update the list of users in the block from the top
         </p>
-        <RegisterReduxForm onSubmit={onSubmit} positions={positions} />
+        <RegisterReduxForm
+          onSubmit={onSubmit}
+          positions={positions}
+          addSelectedPhoto={addSelectedPhoto}
+          photoName={photoName}
+        />
       </div>
     </article>
   )
