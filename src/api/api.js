@@ -39,11 +39,14 @@ export const registerAPI = {
   },
   postUser(registerData, selectedPhoto, token) {
     let formData = new FormData();
+    const phoneNumber = registerData.phone.split(' ').join('');
+
     formData.append('name', registerData.name);
     formData.append('email', registerData.email);
-    formData.append('phone', registerData.phone);
+    formData.append('phone', phoneNumber);
     formData.append('position_id', registerData.id);
     formData.append('photo', selectedPhoto);
+
     return instance.post('users', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',

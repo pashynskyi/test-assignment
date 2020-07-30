@@ -35,16 +35,11 @@
         .field {
           width: 467px;
           padding: 7px;
-          margin-bottom: 20px;
-          border: 1px solid #ced4da;
+          margin-bottom: 25px;
           border-radius: 4px;
           background-color: #ffffff;
           color: #404040;
           font-size: 16px;
-          &:focus {
-            border: 1px solid #80bdff;
-            box-shadow: 0px 0px 0px 3px rgba(128, 189, 255, 0.2);
-          }
         }
         p {
           font-size: 12px;
@@ -53,6 +48,7 @@
         &.radio-box {
           display: block;
           width: 467px;
+          margin-bottom: 27px;
           .position-box {
             display: flex;
             flex-direction: column;
@@ -64,6 +60,7 @@
             }
             & input {
               margin-right: 10px;
+              box-shadow: none;
               &::after {
                 content: "";
                 display: inline-block;
@@ -90,10 +87,36 @@
         }
         & .field.field-file {
           color: #b2b9c0;
+          border: 1px solid #ced4da;
           position: relative;
           height: 38px;
           display: flex;
           align-items: center;
+          &:focus {
+            border: 1px solid #80bdff;
+            box-shadow: 0px 0px 0px 3px rgba(128, 189, 255, 0.2);
+            & label.file-label {
+              border-left: 1px solid #80bdff;
+            }
+          }
+          &.warning {
+            border: solid 1px #db3445;
+            position: relative;
+            &[data-warn]::after {
+              content: attr(data-warn);
+              position: absolute;
+              font-size: 12px;
+              color: #f44336;
+              top: 42px;
+              left: 0px;
+            }
+            &:focus {
+              box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
+            }
+            & label.file-label {
+              border-left: 1px solid #db3445;
+            }
+          }
           /* стили для file upload button */
           & label.file-label {
             color: $titleColor;
@@ -109,11 +132,12 @@
             top: 0;
             right: 0;
             bottom: 0;
+            cursor: pointer;
           }
         }
       }
     }
-    & .button {
+    & .register-btn-box {
       margin-top: 40px;
     }
   }

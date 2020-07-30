@@ -3,34 +3,46 @@ import React from 'react';
 export const Input = ({ input, meta, ...props }) => {
 
   const hasError = meta.touched && meta.error;
-  
-  const onMainPhotoSelected = (e) => {
-    if (e.target.files.length) {
-      debugger;
-     console.log(e.target.files[0]);
-    }
-  }
-
 
   return (
     <div className={`${'formControl'} ${hasError ? 'error' : ""}`}>
       <div>
-        <input onChange={onMainPhotoSelected} {...input} {...props} />
+        <input {...input} {...props} />
       </div>
       {hasError && <span>{meta.error}</span>}
     </div>
   )
 }
 
-// export const Select = ({ input, meta, ...props }) => {
 
-//   const hasError = meta.touched && meta.error;
+// const adaptFileEventToValue = delegate =>
+//   e => delegate(e.target.files[0])
+
+// export const FileInput = ({
+//   input: {
+//     value: omitValue,
+//     onChange,
+//     onBlur,
+//     ...inputProps
+//   },
+//   meta: omitMeta,
+//   ...props
+// }) => {
+
+//   const hasError = omitMeta.touched && omitMeta.error;
+
 //   return (
 //     <div className={`${'formControl'} ${hasError ? 'error' : ""}`}>
 //       <div>
-//         <select {...input} {...props} />
+//         <input
+//           onChange={adaptFileEventToValue(onChange)}
+//           onBlur={adaptFileEventToValue(onBlur)}
+//           type="file"
+//           {...inputProps}
+//           {...props}
+//         />
 //       </div>
-//       {hasError && <span>{meta.error}</span>}
+//       {hasError && <span>{omitMeta.error}</span>}
 //     </div>
 //   )
 // }

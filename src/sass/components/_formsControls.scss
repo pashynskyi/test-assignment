@@ -1,11 +1,21 @@
 .formControl {
   display: inline-block;
   position: relative;
+  & input {
+    border: 1px solid #ced4da;
+    &:focus {
+      border: 1px solid #80bdff;
+      box-shadow: 0px 0px 0px 3px rgba(128, 189, 255, 0.2);
+    }
+  }
   &.error {
     position: relative;
     & input {
       border: solid 1px #db3445;
-      box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
+      // box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
+      &:focus {
+        box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
+      }
     }
     & span {
       font-size: 12px;
@@ -31,4 +41,3 @@
 .position-box .formControl.error input {
   box-shadow: none;
 }
-

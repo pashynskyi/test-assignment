@@ -1,12 +1,30 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { required, maxLengthCreator } from '../../../../utils/validators/validators';
-import { Input } from '../../../common/FormsControls/FormsControls';
+import {
+  required,
+  maxLengthCreator,
+  validateEmail,
+  minLengthCreator,
+  phoneNumber,
+  maxFileSize
+} from '../../../../utils/validators/validators';
+import { Input, FileInput } from '../../../common/FormsControls/FormsControls';
 import Button from '../../../common/Button/Button';
 
-const maxLength255 = maxLengthCreator(255);
+export const RegisterForm = ({
+  handleSubmit,
+  positions,
+  addSelectedPhoto,
+  photoName,
+  photoSize,
+  warningClass,
+  toggleWarningClass,
+  addWarningClass
+}) => {
 
-export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoName }) => {
+  const minLength2 = minLengthCreator(2);
+  const maxLength60 = maxLengthCreator(60);
+  const maxFileSize5 = maxFileSize(photoSize, 5);
 
   const positionsElements = positions.map((position) => (
     <label key={position.id}>
@@ -23,11 +41,34 @@ export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoN
   const onSelectedPhoto = (e) => {
     if (e.target.files.length) {
       addSelectedPhoto(e.target.files[0]);
+      toggleWarningClass()
+    }
+  }
+
+  const onBlurFieldFile = () => {
+    if (!photoName && !warningClass) {
+      toggleWarningClass()
+    }
+  }
+
+  const onClickRegisterBtn = () => {
+    if ((!photoName && !warningClass) || maxFileSize5 !== undefined) {
+      addWarningClass()
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* <div className="field-box">
+        <h3>Name</h3>
+        <Field
+          className="field"
+          name="testign"
+          component={FileInput}
+          type="file"
+          validate={[required]}
+          placeholder="Your name" />
+      </div> */}
       <div className="field-box">
         <h3>Name</h3>
         <Field
@@ -35,7 +76,7 @@ export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoN
           name="name"
           component={Input}
           type="text"
-          validate={[required, maxLength255]}
+          validate={[required, minLength2, maxLength60]}
           placeholder="Your name" />
       </div>
       <div className="field-box">
@@ -45,7 +86,7 @@ export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoN
           name="email"
           component={Input}
           type="email"
-          validate={[required, maxLength255]}
+          validate={[required, validateEmail]}
           placeholder="Your email" />
       </div>
       <div className="field-box">
@@ -55,8 +96,8 @@ export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoN
           name="phone"
           component={Input}
           type="text"
-          validate={[required, maxLength255]}
-          placeholder="+380 XX XXX XX XX" />
+          validate={[required, phoneNumber]}
+          placeholder="+380XX XXX XX XX" />
         <p>Enter phone number in open format</p>
       </div>
       <div className="field-box radio-box">
@@ -68,20 +109,26 @@ export const RegisterForm = ({ handleSubmit, positions, addSelectedPhoto, photoN
       <div className="field-box">
         <h3>Photo</h3>
         <input
-          // className="field"
           id="file"
           type="file"
           accept=".jpg, .jpeg"
           onChange={onSelectedPhoto}
         />
-        <div className="field field-file">
-          {!photoName ? 'Upload your photo' : photoName}
-          <label className='file-label' for="file">
+        <div
+          className={(!warningClass && !maxFileSize5) ? "field field-file" : "field field-file warning"}
+          data-warn={maxFileSize5 !== undefined ? `${maxFileSize5}` : "Field is required"}
+          tabIndex="0"
+          onBlur={onBlurFieldFile}
+        >
+          {(!photoName && !warningClass) && 'Upload your photo'}
+          {(!photoName && warningClass) && 'No file chosen'}
+          {photoName}
+          <label className='file-label' htmlFor="file">
             Browse
-        </label>
+          </label>
         </div>
       </div>
-      <div>
+      <div className="register-btn-box" onClick={onClickRegisterBtn}>
         <Button type='submit' />
       </div>
     </form>

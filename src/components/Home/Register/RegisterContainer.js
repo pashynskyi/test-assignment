@@ -3,10 +3,20 @@ import { connect } from 'react-redux';
 import Register from './Register';
 import { requestToken, requestPositions, registerUser } from '../../../redux/reducers/registerReducer';
 
+
 class RegisterContainer extends React.Component {
 
   state = {
-    selectedPhoto: ''
+    selectedPhoto: '',
+    warningClass: false // file upload button (field-file)
+  }
+
+  toggleWarningClass = () => {
+    this.setState({ warningClass: !this.state.warningClass })
+  }
+
+  addWarningClass = () => {
+    this.setState({ warningClass: true })
   }
 
   addSelectedPhoto = (e) => {
@@ -14,7 +24,9 @@ class RegisterContainer extends React.Component {
   }
 
   onSubmit = (registerData) => {
-    this.props.registerUser(registerData, this.state.selectedPhoto, this.props.token)
+    if (this.state.selectedPhoto && !this.state.warningClass) {
+      this.props.registerUser(registerData, this.state.selectedPhoto, this.props.token)
+    }
   }
 
   componentDidMount() {
@@ -30,6 +42,10 @@ class RegisterContainer extends React.Component {
           positions={this.props.positions}
           addSelectedPhoto={this.addSelectedPhoto}
           photoName={this.state.selectedPhoto.name}
+          photoSize={this.state.selectedPhoto.size}
+          warningClass={this.state.warningClass}
+          toggleWarningClass={this.toggleWarningClass}
+          addWarningClass={this.addWarningClass}
         />
     )
   }

@@ -1,7 +1,16 @@
 import React from 'react';
 import { RegisterReduxForm } from './RegisterReduxForm/RegisterReduxFrom';
 
-const Register = ({ onSubmit, positions, addSelectedPhoto, photoName }) => {
+const Register = ({
+  onSubmit,
+  positions,
+  addSelectedPhoto,
+  photoName,
+  photoSize,
+  warningClass,
+  toggleWarningClass,
+  addWarningClass
+}) => {
   return (
     <article className="register-container">
       <div>
@@ -15,6 +24,10 @@ const Register = ({ onSubmit, positions, addSelectedPhoto, photoName }) => {
           positions={positions}
           addSelectedPhoto={addSelectedPhoto}
           photoName={photoName}
+          photoSize={photoSize}
+          warningClass={warningClass}
+          toggleWarningClass={toggleWarningClass}
+          addWarningClass={addWarningClass}
         />
       </div>
     </article>
