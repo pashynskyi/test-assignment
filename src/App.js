@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './Header';
 import './sass/app.scss';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import Header from './Header';
 import Home from './components/Home/Home';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -17,9 +18,8 @@ function App() {
           <Switch>
             <Route path='/' render={() => <Home />} />
           </Switch>
-          {/* <Home /> */}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
