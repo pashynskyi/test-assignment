@@ -8,7 +8,7 @@ import {
   phoneNumber,
   maxFileSize
 } from '../../../../utils/validators/validators';
-import { Input, FileInput } from '../../../common/FormsControls/FormsControls';
+import { Input } from '../../../common/FormsControls/FormsControls';
 import Button from '../../../common/Button/Button';
 
 export const RegisterForm = ({

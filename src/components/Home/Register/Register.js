@@ -1,9 +1,11 @@
 import React from 'react';
 import { RegisterReduxForm } from './RegisterReduxForm/RegisterReduxFrom';
+import ModalContainer from '../../common/Modal/ModalContainer';
 
 const Register = ({
   onSubmit,
   positions,
+  isSuccess,
   addSelectedPhoto,
   photoName,
   photoSize,
@@ -30,6 +32,9 @@ const Register = ({
           addWarningClass={addWarningClass}
         />
       </div>
+      {isSuccess &&
+        <ModalContainer />
+      }
     </article>
   )
 }

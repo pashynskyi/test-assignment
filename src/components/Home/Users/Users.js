@@ -2,7 +2,7 @@ import React from 'react';
 import photoCover from '../../../assets/images/photo-cover.png';
 import UserBtnContainer from '../../common/Button/UserBtnContainer';
 
-const Users = ({ users }) => {
+const Users = ({ users, totalPages }) => {
   const usersElements = users.map((user) => (
     <div className="user-card-box" key={user.id}>
       <div className="user-card">
@@ -31,7 +31,10 @@ const Users = ({ users }) => {
         <div className="user-row">
           {usersElements}
         </div>
-        <UserBtnContainer />
+        {totalPages.totalPages !== totalPages.currentPage &&
+          <UserBtnContainer />
+        }
+
       </div>
     </article>
   )

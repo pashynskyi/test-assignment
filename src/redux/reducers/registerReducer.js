@@ -3,6 +3,7 @@ import { registerAPI } from "../../api/api";
 const SET_POSITIONS = 'SET_POSITIONS';
 const SET_TOKEN = 'SET_TOKEN';
 const SET_NEW_USER = 'NEW_USER';
+const CLEAR_NEW_USER = 'CLEAR_NEW_USER';
 
 let initialState = {
   token: '',
@@ -25,12 +26,15 @@ const registerReducer = (state = initialState, action) => {
         token: action.payload
       };
     case SET_NEW_USER:
-      debugger;
       return {
         ...state,
         newUser: action.payload
       };
-
+    case CLEAR_NEW_USER:
+      return {
+        ...state,
+        newUser: ''
+      };
     default:
       return state;
   }
@@ -39,7 +43,7 @@ const registerReducer = (state = initialState, action) => {
 export const setPositions = (positions) => ({ type: SET_POSITIONS, payload: positions })
 export const setToken = (token) => ({ type: SET_TOKEN, payload: token })
 export const newUser = (newUser) => ({ type: SET_NEW_USER, payload: newUser })
-
+export const clearNewUser = () => ({ type: CLEAR_NEW_USER })
 
 export const requestToken = () => {
   return (dispatch) => {

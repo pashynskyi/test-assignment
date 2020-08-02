@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Register from './Register';
 import { requestToken, requestPositions, registerUser } from '../../../redux/reducers/registerReducer';
+import { requestUsers } from '../../../redux/reducers/usersReducer';
 
 
 class RegisterContainer extends React.Component {
@@ -40,6 +41,7 @@ class RegisterContainer extends React.Component {
         <Register
           onSubmit={this.onSubmit}
           positions={this.props.positions}
+          isSuccess={this.props.isSuccess}
           addSelectedPhoto={this.addSelectedPhoto}
           photoName={this.state.selectedPhoto.name}
           photoSize={this.state.selectedPhoto.size}
@@ -55,8 +57,9 @@ let mapStateToProps = ({ register }) => {
   return {
     token: register.token,
     positions: register.positions,
-    isReady: register.isReady
+    isReady: register.isReady,
+    isSuccess: register.newUser.success
   }
 }
 
-export default connect(mapStateToProps, { requestToken, requestPositions, registerUser })(RegisterContainer);
+export default connect(mapStateToProps, { requestToken, requestPositions, registerUser, requestUsers })(RegisterContainer);
