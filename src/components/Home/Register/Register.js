@@ -14,7 +14,7 @@ const Register = ({
   addWarningClass
 }) => {
   return (
-    <article className="register-container">
+    <article className="register-container" id='register'>
       <div>
         <h1>Register to get a work</h1>
         <p>

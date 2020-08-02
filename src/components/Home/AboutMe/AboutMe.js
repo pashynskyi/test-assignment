@@ -22,7 +22,9 @@ const AboutMe = () => {
             you will get bonus points as well. Slice service
             directory page P​SD mockup​ into HTML5/CSS3.
           </p>
-          <span>Sign up now</span>
+          <a href="#register">
+            <span>Sign up now</span>
+          </a>
         </div>
       </div>
     </article >
