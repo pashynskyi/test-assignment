@@ -2,18 +2,29 @@
 
 .about-me-container {
   margin-bottom: 156px;
+  @media (max-width: $tablet) {
+    margin-bottom: 116px;
+  }
   h1 {
     font-size: $titleFontSize1;
     color: $titleColor;
     text-align: center;
     margin-bottom: 68px;
     letter-spacing: -1px;
+    @media (max-width: $tablet) {
+      font-size: $titleFontSize1Tablet;
+    }
   }
   & > div {
     display: flex;
     img {
       height: 285px;
+      width: 339px;
       margin-left: 25px;
+      @media (max-width: $tablet) {
+        width: 247px;
+        height: 207px;
+      }
     }
     & div {
       margin-left: 50px;

@@ -84,39 +84,50 @@
     .header-menu {
       @media (max-width: $tablet) {
         position: fixed;
-        top: -100%;
-        left: 0;
+        top: 0;
+        left: -100%;
         width: 100%;
         height: 100%;
-        // background-color: $backgroundColor;
-        background-color: whitesmoke;
-        padding: 80px 10px 20px 10px;
+        background-color: rgba(1, 1, 1, 0.5);
         transition: all 0.3s ease 0s;
         &.active {
-          top: 0;
+          left: 0;
         }
       }
-    }
-    ul {
-      display: flex;
-      position: relative;
-      z-index: 2;
-      @media (max-width: $tablet) {
-        display: block;
-      }
-      li {
-        margin-right: 30px;
-        font-size: 14px;
+      .list-container {
         @media (max-width: $tablet) {
-          margin: 0px 0px 20px 0px;
+          background: $backgroundColor;
+          position: absolute;
+          top: 60px;
+          right: 60%;
+          left: 0;
+          bottom: 0;
+          padding: 30px 10px 20px 15px;
+          border-top: 1px solid #e1e1e1;
         }
-        a {
-          color: $titleColor;
-          &:hover {
-            color: $primaryColor;
+        ul {
+          display: flex;
+          position: relative;
+          z-index: 2;
+          @media (max-width: $tablet) {
+            display: block;
           }
-          &:active {
-            color: $secondaryColor;
+          li {
+            margin-right: 30px;
+            font-size: 14px;
+            @media (max-width: $tablet) {
+              margin: 0px 0px 20px 0px;
+              font-size: 16px;
+            }
+            a {
+              color: $titleColor;
+              &:hover {
+                color: $primaryColor;
+              }
+              &:active {
+                color: $secondaryColor;
+              }
+            }
           }
         }
       }

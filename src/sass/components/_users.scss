@@ -6,10 +6,16 @@
     margin: 0px -30px;
     padding: 150px 30px 0px 30px;
     text-align: center;
+    @media (max-width: $tablet) {
+      padding: 119px 30px 0px 30px;
+    }
     h1 {
       font-size: $titleFontSize1;
       color: $titleColor;
       margin-bottom: 23px;
+      @media (max-width: $tablet) {
+        font-size: $titleFontSize1Tablet;
+      }
     }
     p {
       font-size: 16px;
@@ -18,14 +24,12 @@
     .user-row {
       display: flex;
       flex-wrap: wrap;
-      // background: greenyellow;
       .user-card-box {
         width: 33.33%;
         display: flex;
         justify-content: center;
         margin-bottom: 90px;
         .user-card {
-          // background: aqua;
           width: 200px;
           img {
             width: 70px;

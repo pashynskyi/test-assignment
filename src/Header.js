@@ -24,13 +24,15 @@ class Header extends React.Component {
             <span></span>
           </div>
           <nav className={!this.state.activeClass ? "header-menu" : "header-menu active"}>
-            <ul>
-              <li><NavLink to="#">About me</NavLink></li>
-              <li><NavLink to="#">Relationships</NavLink></li>
-              <li><NavLink to="#">Requirements</NavLink></li>
-              <li><NavLink to="#">Users</NavLink></li>
-              <li><a href="#register">Sign Up</a></li>
-            </ul>
+            <div className="list-container">
+              <ul>
+                <li><NavLink to="#">About me</NavLink></li>
+                <li><NavLink to="#">Relationships</NavLink></li>
+                <li><NavLink to="#">Requirements</NavLink></li>
+                <li><NavLink to="#">Users</NavLink></li>
+                <li><a onClick={this.toggleActiveClass} href="#register">Sign Up</a></li>
+              </ul>
+            </div>
           </nav>
         </div>
       </header>
