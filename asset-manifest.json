@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80c0c14f.chunk.css",
+    "main.js": "/static/js/main.0f571d1c.chunk.js",
+    "main.js.map": "/static/js/main.0f571d1c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6773cb1d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6773cb1d.js.map",
+    "static/js/2.ea9fa2c1.chunk.js": "/static/js/2.ea9fa2c1.chunk.js",
+    "static/js/2.ea9fa2c1.chunk.js.map": "/static/js/2.ea9fa2c1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5ede11607151039cf55861e6ea710bfb.js": "/precache-manifest.5ede11607151039cf55861e6ea710bfb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.80c0c14f.chunk.css.map": "/static/css/main.80c0c14f.chunk.css.map",
+    "static/js/2.ea9fa2c1.chunk.js.LICENSE.txt": "/static/js/2.ea9fa2c1.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/static/media/banner-photo.f5443d74.jpg",
+    "static/media/logo.svg": "/static/media/logo.146e2926.svg",
+    "static/media/man-laptop-v1.svg": "/static/media/man-laptop-v1.3cdf7897.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6773cb1d.js",
+    "static/js/2.ea9fa2c1.chunk.js",
+    "static/css/main.80c0c14f.chunk.css",
+    "static/js/main.0f571d1c.chunk.js"
+  ]
+}
