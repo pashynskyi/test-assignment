@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .footer {
   background: $backgroundColor;
@@ -9,9 +10,7 @@
     height: 100%;
     max-width: $contentMaxWidth;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter();
     span {
       font-size: 16px;
       margin: 0px 5px;

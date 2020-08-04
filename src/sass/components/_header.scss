@@ -8,8 +8,19 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 10;
+  z-index: 50;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $backgroundColor;
+    z-index: 2;
+  }
   & .header-content {
+    position: relative;
     height: 100%;
     max-width: $contentMaxWidth;
     margin: 0 auto;
@@ -18,12 +29,87 @@
     justify-content: space-between;
     img {
       margin-left: 30px;
+      position: relative;
+      z-index: 3;
+    }
+    .header-burger {
+      display: none;
+      @media (max-width: $tablet) {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        margin-right: 15px;
+        position: relative;
+        z-index: 3;
+        cursor: pointer;
+        & span {
+          position: absolute;
+          background-color: $secondaryColor;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          top: 9px;
+          transition: all 0.3s ease 0s;
+        }
+        &:before,
+        &:after {
+          content: "";
+          background-color: $secondaryColor;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          left: 0;
+          transition: all 0.3s ease 0s;
+        }
+        &:before {
+          top: 0;
+        }
+        &:after {
+          bottom: 0;
+        }
+      }
+      &.active span {
+        transform: scale(0);
+      }
+      &.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+    }
+    .header-menu {
+      @media (max-width: $tablet) {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background-color: $backgroundColor;
+        background-color: whitesmoke;
+        padding: 80px 10px 20px 10px;
+        transition: all 0.3s ease 0s;
+        &.active {
+          top: 0;
+        }
+      }
     }
     ul {
       display: flex;
+      position: relative;
+      z-index: 2;
+      @media (max-width: $tablet) {
+        display: block;
+      }
       li {
         margin-right: 30px;
         font-size: 14px;
+        @media (max-width: $tablet) {
+          margin: 0px 0px 20px 0px;
+        }
         a {
           color: $titleColor;
           &:hover {
