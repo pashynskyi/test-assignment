@@ -11,7 +11,7 @@ import Footer from './Footer';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/test-assignment/">
       <div className="app-wrapper">
         <Header />
         <main className='app-content'>
