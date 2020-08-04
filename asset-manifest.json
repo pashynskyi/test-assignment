@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.80c0c14f.chunk.css",
-    "main.js": "/static/js/main.0f571d1c.chunk.js",
-    "main.js.map": "/static/js/main.0f571d1c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6773cb1d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6773cb1d.js.map",
-    "static/js/2.ea9fa2c1.chunk.js": "/static/js/2.ea9fa2c1.chunk.js",
-    "static/js/2.ea9fa2c1.chunk.js.map": "/static/js/2.ea9fa2c1.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.5ede11607151039cf55861e6ea710bfb.js": "/precache-manifest.5ede11607151039cf55861e6ea710bfb.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.80c0c14f.chunk.css.map": "/static/css/main.80c0c14f.chunk.css.map",
-    "static/js/2.ea9fa2c1.chunk.js.LICENSE.txt": "/static/js/2.ea9fa2c1.chunk.js.LICENSE.txt",
-    "static/media/app.scss": "/static/media/banner-photo.f5443d74.jpg",
-    "static/media/logo.svg": "/static/media/logo.146e2926.svg",
-    "static/media/man-laptop-v1.svg": "/static/media/man-laptop-v1.3cdf7897.svg"
+    "main.css": "/test-assignment/static/css/main.d2e4a3c0.chunk.css",
+    "main.js": "/test-assignment/static/js/main.81f48c7b.chunk.js",
+    "main.js.map": "/test-assignment/static/js/main.81f48c7b.chunk.js.map",
+    "runtime-main.js": "/test-assignment/static/js/runtime-main.4063537b.js",
+    "runtime-main.js.map": "/test-assignment/static/js/runtime-main.4063537b.js.map",
+    "static/js/2.ea9fa2c1.chunk.js": "/test-assignment/static/js/2.ea9fa2c1.chunk.js",
+    "static/js/2.ea9fa2c1.chunk.js.map": "/test-assignment/static/js/2.ea9fa2c1.chunk.js.map",
+    "index.html": "/test-assignment/index.html",
+    "precache-manifest.e6b785de4de6cba2a8450ba34edcbf61.js": "/test-assignment/precache-manifest.e6b785de4de6cba2a8450ba34edcbf61.js",
+    "service-worker.js": "/test-assignment/service-worker.js",
+    "static/css/main.d2e4a3c0.chunk.css.map": "/test-assignment/static/css/main.d2e4a3c0.chunk.css.map",
+    "static/js/2.ea9fa2c1.chunk.js.LICENSE.txt": "/test-assignment/static/js/2.ea9fa2c1.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/test-assignment/static/media/banner-photo.f5443d74.jpg",
+    "static/media/logo.svg": "/test-assignment/static/media/logo.146e2926.svg",
+    "static/media/man-laptop-v1.svg": "/test-assignment/static/media/man-laptop-v1.3cdf7897.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6773cb1d.js",
+    "static/js/runtime-main.4063537b.js",
     "static/js/2.ea9fa2c1.chunk.js",
-    "static/css/main.80c0c14f.chunk.css",
-    "static/js/main.0f571d1c.chunk.js"
+    "static/css/main.d2e4a3c0.chunk.css",
+    "static/js/main.81f48c7b.chunk.js"
   ]
 }
