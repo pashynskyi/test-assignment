@@ -29,7 +29,7 @@ class Header extends React.Component {
                 <li><NavLink to="#">About me</NavLink></li>
                 <li><NavLink to="#">Relationships</NavLink></li>
                 <li><NavLink to="#">Requirements</NavLink></li>
-                <li><NavLink to="#">Users</NavLink></li>
+                <li><a onClick={this.toggleActiveClass} href="#users">Users</a></li>
                 <li><a onClick={this.toggleActiveClass} href="#register">Sign Up</a></li>
               </ul>
             </div>

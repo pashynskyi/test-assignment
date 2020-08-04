@@ -9,6 +9,13 @@
     @media (max-width: $tablet) {
       padding: 119px 30px 0px 30px;
     }
+    @media (max-width: 700px) {
+      padding: 80px 0px 0px 0px;
+    }
+    @media (max-width: 600px) {
+      padding: 80px 0px 0px 0px;
+      margin: 0px -15px;
+    }
     h1 {
       font-size: $titleFontSize1;
       color: $titleColor;
@@ -25,12 +32,23 @@
       display: flex;
       flex-wrap: wrap;
       .user-card-box {
-        width: 33.33%;
+        width: 33.333%;
         display: flex;
         justify-content: center;
-        margin-bottom: 90px;
+        margin-bottom: 62px;
+        @media (max-width: 700px) {
+          width: 50%;
+          margin-bottom: 52px;
+        }
+        @media (max-width: 500px) {
+          width: 100%;
+          margin-bottom: 42px;
+        }
         .user-card {
           width: 200px;
+          @media (max-width: $tablet) {
+            padding: 0px 10px;
+          }
           img {
             width: 70px;
             height: 70px;

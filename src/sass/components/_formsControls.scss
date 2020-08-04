@@ -1,6 +1,7 @@
 .formControl {
   display: inline-block;
   position: relative;
+  width: 100%;
   & input {
     border: 1px solid #ced4da;
     &:focus {
@@ -12,7 +13,6 @@
     position: relative;
     & input {
       border: solid 1px #db3445;
-      // box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
       &:focus {
         box-shadow: 0px 0px 0px 3px rgba(219, 52, 69, 0.2);
       }
@@ -27,17 +27,19 @@
   }
 }
 
-.position-box .formControl.error span {
-  display: none;
-  white-space: nowrap;
+.position-box .formControl {
+  width: 25px;
+  &.error span {
+    display: none;
+    white-space: nowrap;
+  }
+  &.error input {
+    box-shadow: none;
+  }
 }
 
 .position-box :first-child .formControl.error span {
   display: block;
   top: -15px;
   left: 0px;
-}
-
-.position-box .formControl.error input {
-  box-shadow: none;
 }

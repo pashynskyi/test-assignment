@@ -24,7 +24,7 @@ const Users = ({ users, totalPages }) => {
   ));
 
   return (
-    <article className="users-container">
+    <article className="users-container" id="users">
       <div>
         <h1>Our cheerful users</h1>
         <p>Attention! Sorting users by registration date</p>

@@ -9,6 +9,9 @@
   right: 0;
   left: 0;
   z-index: 50;
+  @media (max-width: $mobile) {
+    height: 40px;
+  }
   &:before {
     content: "";
     position: absolute;
@@ -104,6 +107,12 @@
           bottom: 0;
           padding: 30px 10px 20px 15px;
           border-top: 1px solid #e1e1e1;
+        }
+        @media (max-width: 600px) {
+          right: 50%;
+        }
+        @media (max-width: $mobile) {
+          top: 40px;
         }
         ul {
           display: flex;
